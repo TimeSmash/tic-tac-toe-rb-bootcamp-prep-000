@@ -45,6 +45,7 @@ def turn(board)
   user_input = gets.strip #prompts input(cell desired) and stores that as a value 
 
   array_index = input_to_index(user_input) 
+<<<<<<< HEAD
 
   if valid_move?(board, array_index)
     if turn_count(board) % 2 == 0
@@ -54,6 +55,13 @@ def turn(board)
     move(board, array_index, "O")
     display_board(board)
     end
+=======
+  #converts cell to array index
+
+  if valid_move?(board, array_index)
+    move(board, array_index, "X")
+    display_board(board)
+>>>>>>> 6d0daffcf931bc8729d88a17485c3cee48ff38d5
   else
     turn(board) #asks again via recursion
   end
@@ -110,7 +118,11 @@ def full?(board)
 end
 
 def draw?(board)
+<<<<<<< HEAD
   if !won?(board) && full?(board)
+=======
+  if !won?(board) && ( full?(board) || !full?(board) )
+>>>>>>> 6d0daffcf931bc8729d88a17485c3cee48ff38d5
     true
   elsif !won?(board)
     false
@@ -118,7 +130,11 @@ def draw?(board)
 end
 
 def over?(board)
+<<<<<<< HEAD
   if (won?(board) && full?(board)) || (won?(board) && !full?(board)) || draw?(board)
+=======
+  if ( won?(board) && ( (full?(board) || !full?(board) ) ) ) || draw?(board)
+>>>>>>> 6d0daffcf931bc8729d88a17485c3cee48ff38d5
     #IF game won AND full board ==> game over
     #IF game won AND NOT full board ==> game over
     #IF game is draw (full,no winner) ==> game over
